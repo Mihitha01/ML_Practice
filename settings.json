@@ -1,0 +1,30 @@
+{
+  // 🔇 Disable all audio cues (typing, errors, suggestions)
+  "audioCues.enabled": "off",
+
+  // 🔕 Disable terminal bell sounds
+  "terminal.integrated.enableBell": false,
+
+  // ♿ Turn off accessibility features that cause sounds
+  "accessibility.support": "off",
+
+  // 🧠 Copilot related (safe, no sounds)
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false
+  },
+
+  // ✍️ Editor behavior (no sound-related triggers)
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+
+  // 🧹 Clean UX
+  "editor.hover.enabled": true,
+  "editor.parameterHints.enabled": true,
+  "editor.lightbulb.enabled": true
+}
