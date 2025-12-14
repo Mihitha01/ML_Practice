@@ -45,7 +45,7 @@ model.fit(X, y)
 # STEP 5: MAKE A PREDICTION
 # ---------------------------------
 # Predict house price for a 1800 sqft house
-prediction = model.predict([[1800]])
+prediction = model.predict(pd.DataFrame({"size_sqft": [1800]}))
 
 print("Predicted price for 1800 sqft house (in thousands):", prediction)
 
