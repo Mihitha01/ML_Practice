@@ -61,10 +61,13 @@ print(f"R² Score: {r2:.4f} (explains {r2*100:.2f}% of variance)")
 print(f"Model Coefficients (slopes): {model.coef_}")
 print(f"Model Intercept: {model.intercept_:.4f}")
 
-# Cross-validation for better generalization estimate
-cv_scores = cross_val_score(model, x_train, y_train, cv=5, scoring='r2')
-print(f"\nCross-Validation R² Scores: {cv_scores}")
-print(f"Mean CV R² Score: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
+# Cross-validation for better generalization estimate (use 3-fold for small dataset)
+if len(x_train) >= 3:
+    cv_scores = cross_val_score(model, x_train, y_train, cv=min(3, len(x_train)), scoring='r2')
+    print(f"\nCross-Validation R² Scores: {cv_scores}")
+    print(f"Mean CV R² Score: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
+else:
+    print("\nDataset too small for cross-validation")
 
 print("\n" + "=" * 60)
 print("MODEL WITH FEATURE SCALING")
@@ -145,4 +148,3 @@ plt.tight_layout()
 plt.savefig('model_analysis.png', dpi=100, bbox_inches='tight')
 print("\n✅ Visualization saved as 'model_analysis.png'")
 plt.show()
-
