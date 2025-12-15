@@ -102,7 +102,7 @@ print("Mean Squared Error:", mse)
 # ---------------------------------
 
 # Define a new house with size, bedrooms, and age
-new_house = [[1600, 3, 7]]
+new_house = [[2100, 3, 7]]
 
 # Scale the new data using the SAME scaler
 new_house_scaled = scaler.transform(new_house)
