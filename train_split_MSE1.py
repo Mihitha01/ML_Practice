@@ -16,6 +16,8 @@ data = pd.read_csv(csv_path)
 
 df = pd.DataFrame(data)
 
+print(data.head())
+
 x = df[["size_sqft"]]
 y = df["price_k"]
 
