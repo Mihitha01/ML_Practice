@@ -31,3 +31,5 @@ prediction = model.predict(new_house)
 
 print("Predicted price (in $1000s): ", prediction)
 
+for feature, importance in zip(x.columns, model.feature_importances_):
+    print(f"Feature: {feature}, Importance: {importance}")
