@@ -33,3 +33,13 @@ print("Predicted price (in $1000s): ", prediction)
 
 for feature, importance in zip(x.columns, model.feature_importances_):
     print(f"Feature: {feature}, Importance: {importance}")
+
+# Evaluate feature importance
+importances = model.feature_importances_
+feature_importance_df = pd.DataFrame({
+    'Feature': x.columns,
+    'Importance': importances
+}).sort_values(by='Importance', ascending=False)
+
+print(feature_importance_df)
+
